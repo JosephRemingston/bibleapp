@@ -18,10 +18,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Bible_appTheme {
-                Surface(modifier = Modifier.fillMaxSize().background(color = Color(0xFFA6DCE0))){
-                    screen()
-                }
+            Surface(modifier = Modifier.fillMaxSize().background(color = Color(0xFFA6DCE0))){
+                screen()
+
             }
         }
     }

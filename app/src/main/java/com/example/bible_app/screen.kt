@@ -46,52 +46,6 @@ fun screen(){
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(all = 15.dp), color = Color(0xFF41526C)
         )
-        var mExpanded by remember { mutableStateOf(false) }
-
-        // Create a list of cities
-        val menu = listOf<String>("old Testament" , "new Testament")
-
-        // Create a string value to store the selected city
-        var mSelectedText by remember { mutableStateOf("") }
-
-        var mTextFieldSize by remember { mutableStateOf(Size.Zero)}
-
-        // Up Icon when expanded and down icon when collapsed
-        val icon = if (mExpanded) {
-            Icons.Filled.KeyboardArrowUp
-        }
-        else {
-            Icons.Filled.KeyboardArrowDown
-        }
-        OutlinedTextField(
-            value = mSelectedText,
-            onValueChange = { mSelectedText = it },
-            modifier = Modifier
-                .fillMaxWidth()
-                .onGloballyPositioned { coordinates ->
-                    // This value is used to assign to
-                    // the DropDown the same width
-                    mTextFieldSize = coordinates.size.toSize()
-                },
-            label = {Text("Label")},
-            trailingIcon = {
-                Icon(icon,"contentDescription",
-                    Modifier.clickable { mExpanded = !mExpanded })
-            }
-        )
-
-        DropdownMenu(
-            expanded = mExpanded,
-            onDismissRequest = { mExpanded = false },
-            modifier = Modifier
-                .width(with(LocalDensity.current){mTextFieldSize.width.toDp()})
-        ) {
-            menu.forEach { label ->
-                DropdownMenuItem(text = {label}, onClick = {
-                    mSelectedText = label
-                    mExpanded = false
-                })
-            }
-        }
+        menu()
     }
 }
