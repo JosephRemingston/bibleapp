@@ -63,7 +63,7 @@ fun menu() {
                     // the DropDown the same width
                     mTextFieldSize = coordinates.size.toSize()
                 },
-            label = { Text("Label") },
+            label = { Text("select testament") },
             trailingIcon = {
                 Icon(icon, "contentDescription",
                     Modifier.clickable { mExpanded = !mExpanded })
@@ -191,7 +191,7 @@ fun menu() {
                     // the DropDown the same width
                     textfieldsize = coordinates.size.toSize()
                 },
-            label = { Text("Label") },
+            label = { Text("select") },
             trailingIcon = {
                 Icon(icons, "contentDescription",
                     Modifier.clickable { expanded = !expanded })
